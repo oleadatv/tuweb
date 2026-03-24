@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TuWeb | Páginas Web Profesionales en Tiempo Récord</title>
+    <title>TuWeb | Diseñamos tu página web hoy mismo</title>
     
     <link rel="icon" href="favicon.png" type="image/png">
 
-    <meta property="og:title" content="TuWeb | Crea tu página web hoy mismo">
-    <meta property="og:description" content="Diseño web profesional. ¡Recibe tu página primero y paga después! Haz crecer tu negocio con presencia en internet.">
+    <meta property="og:title" content="TuWeb | Diseñamos tu página web hoy mismo">
+    <meta property="og:description" content="Diseño web profesional. ¡Recibe tu página primero y paga después! Satisfacción garantizada al 100%.">
     <meta property="og:image" content="https://tuweb.lat/portada.png">
     <meta property="og:url" content="https://tuweb.lat">
     <meta property="og:type" content="website">
@@ -18,27 +18,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        body { font-family: 'Outfit', sans-serif; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
         .text-gradient { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .bg-glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .btn-main { background: linear-gradient(90deg, #2563eb, #4f46e5); color: white; border-radius: 50px; padding: 12px 30px; font-weight: bold; border: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); text-decoration: none;}
         .btn-main:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6); color: white; }
-        .hero-section { padding: 100px 0 80px; text-align: center; }
-        .card-custom { background: #1e293b; border: 1px solid #334155; border-radius: 20px; transition: 0.3s; height: 100%; }
-        .card-custom:hover { transform: translateY(-10px); border-color: #38bdf8; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1); }
+        
+        /* --- HERO SECTION --- */
+        .hero-section { position: relative; padding: 180px 0 120px; text-align: center; overflow: hidden; background-color: #0f172a; }
+        .hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; opacity: 0.08; z-index: 1; animation: heroZoomMove 20s infinite alternate ease-in-out; }
+        .hero-content { position: relative; z-index: 2; }
+        @keyframes heroZoomMove { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
+
+        /* --- CARDS & IMAGES --- */
+        .card-custom { background: #1e293b; border: 1px solid #334155; border-radius: 20px; transition: 0.4s ease-out; height: 100%; overflow: hidden; }
+        .card-custom:hover { transform: translateY(-8px); border-color: #38bdf8; box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15); }
         .icon-box { width: 60px; height: 60px; border-radius: 15px; background: rgba(56, 189, 248, 0.1); color: #38bdf8; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
         
-        /* Botón Flotante WhatsApp */
-        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; border-radius: 50px; padding: 12px 25px; font-weight: bold; font-size: 16px; z-index: 100; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); text-decoration: none; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .float-wa:hover { transform: translateY(-5px); color: white; }
-        .float-wa i { font-size: 24px; }
-        .wa-text { margin-left: 8px; }
+        /* CORRECCIÓN: Se eliminó el grayscale para que no se vean grises */
+        .img-card-top { width: 100%; height: 180px; object-fit: cover; transition: 0.5s; opacity: 0.9; }
+        .card-custom:hover .img-card-top { opacity: 1; transform: scale(1.05); }
         
-        @media (max-width: 768px) {
-            .float-wa { padding: 0; width: 60px; height: 60px; bottom: 20px; right: 20px; border-radius: 50%; }
-            .wa-text { display: none; }
-            .float-wa i { font-size: 32px; margin: 0; }
-        }
+        /* Estilos para fotos de testimonios */
+        .testimonial-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #38bdf8; }
+        
+        /* --- PRICING SECTION --- */
+        .pricing-section { position: relative; padding: 100px 0; background-color: #0c1221; overflow: hidden; border-top: 1px solid #1e293b; }
+        .pricing-bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; opacity: 0.05; z-index: 1; }
+        .pricing-content { position: relative; z-index: 2; }
+        .card-pricing { background: rgba(30, 41, 59, 0.8); border: 2px solid #38bdf8; backdrop-filter: blur(15px); }
+
+        /* --- FLOAT WA --- */
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; border-radius: 50px; padding: 12px 25px; font-weight: bold; z-index: 100; text-decoration: none; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: 0.3s; }
+        .float-wa:hover { transform: scale(1.05); color: white; }
+
+        @media (max-width: 768px) { .wa-text { display: none; } .float-wa { width: 60px; height: 60px; padding: 0; justify-content: center; border-radius: 50%; } }
     </style>
 </head>
 <body>
@@ -49,83 +63,152 @@
                 <img src="logo.jpg" alt="Logo TuWeb" style="height: 40px; border-radius: 8px;" class="me-2">TuWeb
             </a>
             <div class="ms-auto">
-                <a href="mailto:info@tuweb.lat" class="text-white text-decoration-none me-3 d-none d-md-inline"><i class="fas fa-envelope me-1"></i> info@tuweb.lat</a>
+                <a href="mailto:info@tuweb.lat" class="text-white text-decoration-none d-none d-md-inline"><i class="fas fa-envelope me-1"></i> info@tuweb.lat</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-section">
-        <div class="container">
+        <div class="hero-bg-image"></div>
+        <div class="container hero-content">
             <span class="badge bg-primary mb-3 px-3 py-2 rounded-pill fs-6 border border-info">Satisfacción Garantizada al 100%</span>
-            <h1 class="display-3 fw-bold mb-4">Tu página web lista <br> <span class="text-gradient">en tiempo récord</span></h1>
+            <h1 class="display-3 fw-bold mb-4 text-white">Tu página web lista <br> <span class="text-gradient">en tiempo récord</span></h1>
             <p class="lead mb-5 mx-auto text-light" style="max-width: 700px;">
-                Da el salto al mundo digital sin riesgos. Diseñamos la web perfecta para tu negocio en minutos. <strong>La revisas, te enamoras y solo entonces, pagas.</strong>
+                Diseñamos la web perfecta para tu negocio. <strong>La revisas funcionando y solo entonces, pagas.</strong> Sin anticipos ni riesgos.
             </p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://wa.me/593962284745?text=Hola%20TuWeb,%20quiero%20crear%20mi%20p%C3%A1gina%20con%20pago%20contraentrega." target="_blank" class="btn btn-main fs-5"><i class="fab fa-whatsapp me-2"></i>Cotizar por WhatsApp</a>
-            </div>
+            <a href="https://wa.me/593962284745?text=Hola%20TuWeb,%20quiero%20crear%20mi%20p%C3%A1gina%20con%20pago%20contraentrega." target="_blank" class="btn btn-main fs-5"><i class="fab fa-whatsapp me-2"></i>Cotizar por WhatsApp</a>
         </div>
     </header>
 
-    <section class="py-5" style="background-color: #1e293b;">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-4">El único servicio con <span class="text-warning">Pago Contraentrega</span> 🤝</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <p class="fs-5 text-light opacity-75">
-                        Sabemos que contratar por internet puede generar dudas. Por eso cambiamos las reglas: 
-                        nos dices qué necesitas, trabajamos la magia, ves el resultado y <strong>solo pagas cuando estés 100% satisfecho.</strong>
-                    </p>
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">¿Cansado de promesas vacías? 🚩</h2>
+                <p class="text-light opacity-75">Hacer una página web suele ser un dolor de cabeza para los emprendedores.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" class="img-card-top" alt="Precios">
+                        <div class="p-4">
+                            <i class="fas fa-money-bill-wave text-danger mb-3 fs-3"></i>
+                            <h5 class="fw-bold">Precios Excesivos</h5>
+                            <p class="small text-light opacity-75">Otras agencias cobran cientos de dólares por algo básico y sin darte el control de nada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=600&q=80" class="img-card-top" alt="Tiempo">
+                        <div class="p-4">
+                            <i class="fas fa-hourglass-end text-danger mb-3 fs-3"></i>
+                            <h5 class="fw-bold">Demoras Eternas</h5>
+                            <p class="small text-light opacity-75">Semanas y meses esperando para ver un primer borrador de tu sitio web.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" class="img-card-top" alt="Seguridad">
+                        <div class="p-4">
+                            <i class="fas fa-user-shield text-danger mb-3 fs-3"></i>
+                            <h5 class="fw-bold">Miedo a la Estafa</h5>
+                            <p class="small text-light opacity-75">El miedo de pagar un anticipo y que el diseñador desaparezca o no cumpla lo prometido.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-glass">
+        <div class="container py-5">
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card-custom p-4">
+                        <div class="icon-box mx-auto"><i class="fas fa-rocket"></i></div>
+                        <h4 class="fw-bold">Velocidad Extrema</h4>
+                        <p class="text-light opacity-75">Tu web funcional en muy poco tiempo. Olvídate de esperar meses para ver tu negocio en línea.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom p-4">
+                        <div class="icon-box mx-auto"><i class="fas fa-mobile-alt"></i></div>
+                        <h4 class="fw-bold">Diseño Adaptable</h4>
+                        <p class="text-light opacity-75">Tu página se verá increíble en celulares, tablets y computadoras de escritorio.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-custom p-4">
+                        <div class="icon-box mx-auto"><i class="fas fa-headset"></i></div>
+                        <h4 class="fw-bold">Soporte Directo</h4>
+                        <p class="text-light opacity-75">Hablamos directo por WhatsApp. Cambios, dudas o asesoría sin intermediarios.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-5">
-        <div class="container py-5">
-            <div class="row g-4">
-                <div class="col-md-4">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Lo que dicen nuestros clientes 💬</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
                     <div class="card-custom p-4">
-                        <div class="icon-box"><i class="fas fa-rocket"></i></div>
-                        <h4 class="fw-bold">Velocidad Extrema</h4>
-                        <p class="text-light opacity-75">Tu web funcional en tiempo récord. Olvídate de esperar meses para ver tu negocio en línea.</p>
+                        <p class="mb-4 italic">"Tenía miedo de contratar por internet, pero el pago contraentrega de TuWeb me dio seguridad. Mi página quedó lista en 2 días."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img me-3" alt="Carlos R.">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Carlos R.</h6>
+                                <small class="text-info">Ventas Online</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="card-custom p-4">
-                        <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
-                        <h4 class="fw-bold">Diseño Adaptable</h4>
-                        <p class="text-light opacity-75">Tu página se verá increíble en celulares, tablets y computadoras.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-custom p-4">
-                        <div class="icon-box"><i class="fas fa-headset"></i></div>
-                        <h4 class="fw-bold">Soporte Directo</h4>
-                        <p class="text-light opacity-75">Hablamos directo por WhatsApp. Sin intermediarios ni demoras.</p>
+                        <p class="mb-4 italic">"La atención por WhatsApp es excelente. Me diseñaron la web justo como la quería. Recomendado al 100%."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-img me-3" alt="María G.">
+                            <div>
+                                <h6 class="mb-0 fw-bold">María G.</h6>
+                                <small class="text-info">Consultoría</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5" style="background-color: #0b1120;">
-        <div class="container py-4 text-center">
-            <h2 class="fw-bold mb-5">Un plan simple para emprendedores</h2>
+    <section class="pricing-section">
+        <div class="pricing-bg-img"></div>
+        <div class="container pricing-content text-center">
+            <h2 class="fw-bold mb-5 text-white">Un plan simple para crecer</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-5">
-                    <div class="card-custom p-5 border-primary position-relative" style="border-width: 2px;">
-                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-primary px-4 py-2 fs-6">Más Popular</span>
-                        <h3 class="fw-bold mb-3">Plan Emprendedor</h3>
-                        <h2 class="display-4 fw-bold text-gradient mb-4">$80<span class="fs-5 text-light opacity-75">/pago único</span></h2>
-                        <ul class="list-unstyled text-start mb-4 mx-auto" style="max-width: 250px;">
-                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Diseño Moderno</li>
-                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Botones a WhatsApp/Redes</li>
-                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Formulario de Contacto</li>
-                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> <strong>Pago contraentrega</strong></li>
+                    <div class="card-custom p-5 card-pricing position-relative" style="border-width: 2px; overflow: visible;">
+                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-primary px-4 py-2 fs-6 shadow-lg" style="z-index: 10;">Plan Emprendedor</span>
+                        
+                        <div class="mt-3">
+                            <h2 class="display-4 fw-bold text-white mb-2">$80</h2>
+                            <p class="text-info mb-4">Incluye Hosting y Dominio por 1 año</p>
+                        </div>
+
+                        <ul class="list-unstyled text-start mb-4 mx-auto" style="max-width: 280px;">
+                            <li class="mb-3 text-light"><i class="fas fa-check text-success me-2"></i> Diseño Web Profesional</li>
+                            <li class="mb-3 text-light"><i class="fas fa-check text-success me-2"></i> Botones de Contacto Rápido</li>
+                            <li class="mb-3 text-light"><i class="fas fa-check text-success me-2"></i> Correo Corporativo Incluido</li>
+                            <li class="mb-3 text-light"><i class="fas fa-check text-success me-2"></i> <strong>Pago Contraentrega</strong></li>
                         </ul>
-                        <a href="https://www.paypal.com/ncp/payment/E3M5R9MEHDAY4" target="_blank" class="btn btn-outline-light w-100 mb-3"><i class="fab fa-paypal text-info me-2"></i>Aprobar y Pagar (PayPal)</a>
-                        <p class="small text-light opacity-75 mb-0">*Paga de forma segura al recibir tu web.</p>
+                        <div class="bg-dark bg-opacity-50 p-3 rounded-3 mb-4 text-start border border-secondary shadow-sm">
+                            <p class="small mb-2 text-info fw-bold">Precios de renovación:</p>
+                            <p class="small mb-1 text-light opacity-75">• 1 año adicional: $45</p>
+                            <p class="small mb-0 text-light opacity-75">• 3 años adicionales: $100</p>
+                        </div>
+                        <a href="https://www.paypal.com/ncp/payment/E3M5R9MEHDAY4" target="_blank" class="btn btn-main w-100 mb-3"><i class="fab fa-paypal text-info me-2"></i>Pagar con PayPal</a>
                     </div>
                 </div>
             </div>
@@ -133,20 +216,18 @@
     </section>
 
     <a href="https://wa.me/593962284745?text=Hola%20TuWeb,%20me%20interesa%20tener%20mi%20p%C3%A1gina%20web." class="float-wa" target="_blank">
-        <i class="fab fa-whatsapp"></i><span class="wa-text">Cotizar ahora</span>
+        <i class="fab fa-whatsapp me-2 fs-5"></i><span class="wa-text">Cotizar ahora</span>
     </a>
 
-    <footer class="py-4 text-center border-top border-secondary mt-5" style="background-color: #0f172a;">
+    <footer class="py-5 text-center border-top border-secondary mt-5" style="background-color: #0f172a;">
         <div class="container">
-            <h4 class="fw-bold d-flex align-items-center justify-content-center">
-                <img src="logo.jpg" alt="Logo TuWeb" style="height: 30px; border-radius: 6px;" class="me-2">TuWeb
+            <h4 class="fw-bold d-flex align-items-center justify-content-center mb-4 text-white">
+                <img src="logo.jpg" alt="Logo TuWeb" style="height: 35px; border-radius: 6px;" class="me-2">TuWeb
             </h4>
-            <p class="text-light opacity-75 mb-3">Impulsando emprendedores en el mundo digital.</p>
-            <div class="mb-3">
-                <a href="mailto:info@tuweb.lat" class="text-light text-decoration-none me-3"><i class="fas fa-envelope me-1"></i> info@tuweb.lat</a>
-                <span class="text-light"><i class="fas fa-phone me-1"></i> +593 96 228 4745</span>
+            <div class="mb-4 text-light opacity-75">
+                <i class="fas fa-envelope me-1 text-info"></i> info@tuweb.lat | <i class="fas fa-phone me-1 text-info"></i> +593 96 228 4745
             </div>
-            <small class="text-light opacity-75">© 2026 TuWeb. Todos los derechos reservados.</small>
+            <p class="text-light opacity-50 small mb-0">© 2026 TuWeb. Impulsando emprendedores en el mundo digital.</p>
         </div>
     </footer>
 
